@@ -140,7 +140,7 @@ public class Order {
     public String getReceiptText() {
         String header = String.format(
                 "╔══════════════════════════════════════╗%n" +
-                        "║          🥪  DELI-cious 🥪           ║%n" +
+                        "║          🥪 AROUND'A CORNER 🥪      ║%n" +
                         "║      Your Receipt — Thank You!       ║%n" +
                         "╠══════════════════════════════════════╣%n" +
                         "  Order Time: %s%n" +

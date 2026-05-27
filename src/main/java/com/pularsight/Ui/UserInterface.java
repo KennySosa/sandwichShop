@@ -57,7 +57,7 @@ public class UserInterface {
      */
     public void start() {
         System.out.println("\n" + HEADER);
-        System.out.println("  Welcome to DELI-cious — freshest subs in town!\n");
+        System.out.println("  Welcome to AROUND'A CORNER, We got the freshest subs in town!\n");
 
         boolean running = true;
         while (running) {

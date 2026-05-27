@@ -37,7 +37,7 @@ public class Topping {
      * Calculates the cost of this topping for the given sandwich size.
      *
      * price logic lives here (not in Sandwich) so that adding a new
-     * topping categoryonly requires updating this method and ToppingCategory not Sandwich.getPrice().
+     * topping category only requires updating this method and ToppingCategory not Sandwich.getPrice().
      * Premium toppings charge the base price; "extra" adds a surcharge on top
      * @param size the SandwichSize that determines the price tier
      * @return the dollar cost of this topping

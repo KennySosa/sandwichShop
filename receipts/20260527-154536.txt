@@ -1,0 +1,21 @@
+╔══════════════════════════════════════╗
+║          🥪  DELI-cious 🥪           ║
+║      Your Receipt — Thank You!       ║
+╠══════════════════════════════════════╣
+  Order Time: 2026-05-27 15:45:36
+──────────────────────────────────────
+  Sandwich (4", White [TOASTED]) .............. $9.05
+      + Steak (extra)
+      + Ham
+      + Provolone (extra)
+      + Jalapeños
+      + Lettuce
+      + Guacamole
+      + Mushrooms
+      + Thousand Island
+  Drink (Medium lemonade) ................. $2.50
+  Drink (Small cola) ................. $2.00
+  Chips (Jalapeño) .................... $1.50
+──────────────────────────────────────
+  ORDER TOTAL: .................. $15.05
+╚══════════════════════════════════════╝
