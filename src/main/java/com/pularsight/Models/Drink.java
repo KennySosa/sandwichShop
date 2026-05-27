@@ -3,16 +3,7 @@ package com.pularsight.Models;
 import com.pularsight.ENUMS.DrinkSize;
 import com.pularsight.Interfaces.Orderable;
 
-/**
- * Drink represents a beverage added to an order.
- *
- * OOP: Implements Orderable<Drink> — allows Drink to live alongside Sandwich
- * and Chips in the same Order list without casting.
- *
- * DESIGN: Price is derived from DrinkSize (enum), so Drink itself has no
- * price field — it delegates to its size enum constant, keeping the pricing
- * table in one place (the enum).
- */
+
 public class Drink implements Orderable<Drink> {
 
     private final DrinkSize size;
@@ -23,17 +14,17 @@ public class Drink implements Orderable<Drink> {
         this.flavor = flavor;
     }
 
-    /** Copy constructor — flavor and size are immutable, so a shallow copy is fine. */
+    // Copy constructor — flavor and size are immutable, so a shallow copy is fine
     private Drink(Drink source) {
         this.size   = source.size;
         this.flavor = source.flavor;
     }
 
-    // ── Orderable ─────────────────────────────────────────────────────────────
+    //Orderable----------------------------------------------------------------------------
 
     @Override
     public double getPrice() {
-        return size.getPrice();  // delegates to DrinkSize enum — no magic numbers
+        return size.getPrice();  // delegates to DrinkSize enum
     }
 
     @Override
@@ -47,7 +38,7 @@ public class Drink implements Orderable<Drink> {
         return new Drink(this);
     }
 
-    // ── Accessors ─────────────────────────────────────────────────────────────
+    // Accessors ----------------------------------------------------------------------------
     public DrinkSize getSize()   { return size;   }
     public String    getFlavor() { return flavor; }
 

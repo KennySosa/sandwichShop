@@ -1,13 +1,9 @@
 package com.pularsight.ENUMS;
 
-/**
- * BreadType represents the bread options offered at DELI-cious.
- *
- * WHY AN ENUM?
- *   Bread choice is a fixed, finite set defined by the business.
- *   An enum prevents invalid values (e.g. "sourdough") from ever entering
- *   the system and gives us a strongly-typed parameter instead of a raw String.
- */
+
+//BreadType represents the bread options offered at shop
+
+
 public enum BreadType {
     WHITE ("White"),
     WHEAT ("Wheat"),

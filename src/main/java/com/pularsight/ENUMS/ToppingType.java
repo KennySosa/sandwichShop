@@ -1,17 +1,12 @@
 package com.pularsight.ENUMS;
 
-/**
- * ToppingType enum represents every possible topping available at DELI-cious.
+/*
+ *toppingType enum represents every possible topping available at shop
  *
- * WHY AN ENUM?
- *   Enums enforce a closed set of valid values at compile time — no typos, no invalid
- *   toppings, no magic strings scattered through the code. Each constant carries its
- *   own category and display name, so the data travels with the type rather than being
- *   looked up in a separate map or switch statement.
  *
- * DESIGN CHOICE — category field:
- *   Storing ToppingCategory directly on each constant means ToppingType.STEAK.getCategory()
- *   returns ToppingCategory.MEAT without any external lookup.  This removes the need for
+ *category field:
+ *   storing toppingCategory directly on each constant means toppingType.STEAK.getCategory()
+ *   returns toppingCategory.MEAT without any external lookup.  This removes the need for
  *   duplicated if/else chains wherever we need to know whether a topping is premium.
  */
 public enum ToppingType {
@@ -63,7 +58,7 @@ public enum ToppingType {
     public String          getDisplayName() { return displayName; }
     public ToppingCategory getCategory()    { return category;    }
 
-    /** Convenience: is this topping premium (meat or cheese)? */
+    // Convenience: is this topping premium (meat or cheese)
     public boolean isPremium() {
         return category == ToppingCategory.MEAT || category == ToppingCategory.CHEESE;
     }

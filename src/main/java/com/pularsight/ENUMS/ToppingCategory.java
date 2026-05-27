@@ -1,17 +1,13 @@
 package com.pularsight.ENUMS;
 
-/**
+/*
  * ToppingCategory classifies toppings by their pricing tier.
  *
- * WHY SEPARATE FROM ToppingType?
- *   Separation of concerns: ToppingType is the "what" (which topping),
- *   ToppingCategory is the "how priced" (which pricing rule applies).
- *   Adding a new category (e.g. PREMIUM_SAUCE) in the future only requires
- *   changing this enum and the pricing method — no hunting through Topping
- *   or Sandwich code.
- *
- *   MEAT and CHEESE are premium and carry size-based costs.
- *   REGULAR and SAUCE are always free (included).
+ * separated from toppingType cuz
+ *   ToppingType is the which topping
+ *   ToppingCategory is the pricing rule
+ *   Adding a new category in the future only requires
+ *   changing this enum and the pricing method
  */
 public enum ToppingCategory {
     MEAT    ("Meat",    true),

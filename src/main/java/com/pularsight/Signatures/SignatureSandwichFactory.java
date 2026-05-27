@@ -8,31 +8,29 @@ import com.pularsight.Models.Topping;
 import java.util.Arrays;
 import java.util.List;
 
-/**
+/*
  * SignatureSandwichFactory creates the predefined signature sandwiches.
  *
- * WHY A FACTORY?
+ * factory:
  *   The factory pattern separates construction logic from the SignatureSandwich
  *   class itself.  If a new signature sandwich is added or prices change, only
  *   this class needs to be edited — SignatureSandwich, Order, and UI are untouched.
- *
- * STATIC FACTORY METHODS:
+ * using static factory methods cuz:
  *   Each method returns a fresh SignatureSandwich instance so that every call
  *   gets its own independent object.  The customer can then customize (add/remove
  *   toppings) without affecting future orders of the same signature.
- *
- * GENERICS NOTE:
+ * generics:
  *   getAllSignatures() returns List<SignatureSandwich> (not List<Sandwich>),
  *   so the UI can display the signatureName without casting.
  */
 public class SignatureSandwichFactory {
 
-    /** Prevent instantiation — this is a pure utility class. */
+    // Prevent instantiation  this is a utility class.
     private SignatureSandwichFactory() {}
 
-    // ── Signature Definitions ─────────────────────────────────────────────────
+    //---- Signature Definitions --------------------------------------------------
 
-    /**
+    /*
      * BLT: 8" White bread, Bacon, Cheddar, Lettuce, Tomato, Ranch — toasted.
      * Pre-configured per the project spec bonus section.
      */
@@ -49,7 +47,7 @@ public class SignatureSandwichFactory {
         return blt;
     }
 
-    /**
+    /*
      * Philly Cheese Steak: 8" White bread, Steak, American Cheese,
      * Peppers, Mayo — toasted.
      */
@@ -65,10 +63,10 @@ public class SignatureSandwichFactory {
         return philly;
     }
 
-    /**
+    /*
      * Returns all available signature sandwiches as a list.
      *
-     * DESIGN: Using Arrays.asList() (fixed-size view) is intentional —
+     * using Arrays.asList is intentional —
      * the catalogue is fixed at runtime.  If the list needed to grow
      * dynamically, we would use new ArrayList<>(Arrays.asList(...)).
      */

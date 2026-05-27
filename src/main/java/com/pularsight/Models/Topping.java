@@ -3,35 +3,27 @@ package com.pularsight.Models;
 import com.pularsight.ENUMS.SandwichSize;
 import com.pularsight.ENUMS.ToppingType;
 
-/**
+/*
  * Topping represents a single topping placed on a sandwich.
  *
  * It pairs a ToppingType (what the topping IS) with an isExtra flag
  * (whether the customer requested a double portion of a premium topping).
  *
- * WHY A SEPARATE CLASS instead of a plain ToppingType list?
- *   The "extra" concept only applies at order time — it is not inherent to
- *   the topping itself.  Keeping the flag here lets Sandwich.getPrice() stay
- *   clean: it iterates Topping objects and asks each one for its cost given
- *   the sandwich size, rather than maintaining two parallel lists (normal /
- *   extra) for every premium category.
- *
- * IMMUTABILITY:
- *   Fields are final after construction.  If a user wants to change "extra"
- *   they remove the topping and re-add it.  This avoids subtle bugs where a
- *   shared Topping reference is mutated after being added to a sandwich.
+ * IMMUTABILITY
+ *   Fields are final after construction so if a user wants to change "extra"
+ *   they remove the topping and re-add it
  */
 public class Topping {
 
     private final ToppingType type;
     private final boolean     isExtra;  // true = double portion (premium toppings only)
 
-    /** Standard constructor – used for regular (single) toppings. */
+    // Standard constructor – used for regular (single) toppings
     public Topping(ToppingType type) {
         this(type, false);
     }
 
-    /** Full constructor – used when the user requests an extra (double) serving. */
+    // Full constructor – used when the user requests an extra (double) serving.
     public Topping(ToppingType type, boolean isExtra) {
         this.type    = type;
         this.isExtra = isExtra;
@@ -41,16 +33,12 @@ public class Topping {
     public ToppingType getType()    { return type;    }
     public boolean     isExtra()    { return isExtra; }
 
-    /**
+    /*
      * Calculates the cost of this topping for the given sandwich size.
      *
-     * DESIGN: price logic lives here (not in Sandwich) so that adding a new
-     * topping category (e.g. PREMIUM_SAUCE) only requires updating
-     * this method and ToppingCategory — not Sandwich.getPrice().
-     *
-     * Regular toppings and sauces are always free (return 0.0).
-     * Premium toppings charge the base price; "extra" adds a surcharge on top.
-     *
+     * price logic lives here (not in Sandwich) so that adding a new
+     * topping categoryonly requires updating this method and ToppingCategory not Sandwich.getPrice().
+     * Premium toppings charge the base price; "extra" adds a surcharge on top
      * @param size the SandwichSize that determines the price tier
      * @return the dollar cost of this topping
      */
@@ -72,11 +60,8 @@ public class Topping {
                 return 0.0;   // free toppings — no charge
         }
     }
+    //Returns a formatted summary for use on the receipt.
 
-    /**
-     * Returns a formatted summary for use on the receipt.
-     * Example: "  + Bacon (extra)"
-     */
     public String getReceiptLine() {
         String extra = isExtra ? " (extra)" : "";
         return "      + " + type.getDisplayName() + extra;

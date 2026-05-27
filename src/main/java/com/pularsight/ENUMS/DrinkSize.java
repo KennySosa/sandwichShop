@@ -1,9 +1,9 @@
 package com.pularsight.ENUMS;
 
 
-/**
- * DrinkSize enum for the three drink sizes offered at DELI-cious.
- * Prices are embedded directly, following the same single-source-of-truth
+/*
+ * drinkSize enum for the three drink sizes offered at shop
+ * prices are embedded directly, following the same single source
  * pattern used in SandwichSize.
  */
 public enum DrinkSize {

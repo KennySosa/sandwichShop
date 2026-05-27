@@ -1,22 +1,15 @@
 package com.pularsight.ENUMS;
 
-/**
+/*
  * SandwichSize enum captures the three available sandwich sizes along with
  * every price tier that depends on size.
  *
- * WHY EMBED PRICES IN THE ENUM?
+ * i embed prices in enum cuz
  *   The spec defines exactly three sizes with fixed pricing tables.
  *   By attaching every price to its size constant we get a single source of
  *   truth: changing the 8" meat price means editing ONE line here, nowhere else.
  *   A separate PricingService or static map would spread this knowledge out and
- *   create extra coupling.
- *
- * FIELDS (all per-size prices from the requirements):
- *   basePrice    – flat cost for the bread/sandwich itself
- *   meatPrice    – cost per meat topping
- *   extraMeat    – surcharge for a "double" meat
- *   cheesePrice  – cost per cheese topping
- *   extraCheese  – surcharge for "extra" cheese
+ *   create extra coupling. its for the most part fixed values
  */
 public enum SandwichSize {
 
