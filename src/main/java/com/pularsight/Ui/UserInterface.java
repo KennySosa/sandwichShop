@@ -66,7 +66,7 @@ public class UserInterface {
             switch (choice) {
                 case 1 -> runOrderFlow();
                 case 2 -> {
-                    System.out.println("\n  Thanks for visiting DELI-cious! See you next time! 🥪\n");
+                    System.out.println("\n  Thanks for visiting AROUND'A CORNER! See you next time! 🥪\n");
                     running = false;
                 }
             }
