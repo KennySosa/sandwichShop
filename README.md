@@ -106,6 +106,21 @@ Sample Receipt
   ORDER TOTAL: ......................... $16.00
 ╚══════════════════════════════════════╝
 ```
+## Interesting Code
+
+One of my favorite parts of this project is how the topping menu is built dynamically
+using Java Streams in `addToppingsByCategory()` inside `UserInterface.java`. Instead of
+hardcoding a separate list for meats, cheeses, and regular toppings, I filter the
+`ToppingType` enum at runtime by category. This means if I ever add a new topping to
+the enum, it automatically appears in the menu with no UI changes needed.
+
+```java
+List<ToppingType> options = Arrays.stream(ToppingType.values())
+        .filter(t -> t.getCategory() == category)
+        .collect(Collectors.toList());
+```
+THIS CODE CAN BE FOUND UNDER : Ui --> UserInterface line 248
+
 Receipts are saved to `receipts/yyyyMMdd-HHmmss.txt` — for example `receipts/20230329-121523.txt`.
 ---
 Built as part of the Pluralsight Java Development Bootcamp — Capstone 2
