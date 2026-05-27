@@ -9,6 +9,20 @@ Add chips in 5 flavors
 Live cart total shown on every screen
 Full receipt preview before confirming your order
 Receipt automatically saved to the `receipts/` folder with a timestamp filename
+
+## Screenshots
+
+**Home Screen**
+![Home Screen](screenshots/home.png)
+
+**Order Screen**
+![Order Screen](screenshots/order.png)
+
+**Add Sandwich Screen**
+![Add Sandwich Screen](screenshots/sandwich.png)
+
+**Checkout Screen**
+![Checkout Screen](screenshots/checkout.png)
 ---
 How to Run
 Prerequisites
