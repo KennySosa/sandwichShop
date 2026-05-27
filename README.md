@@ -109,3 +109,6 @@ Sample Receipt
 Receipts are saved to `receipts/yyyyMMdd-HHmmss.txt` — for example `receipts/20230329-121523.txt`.
 ---
 Built as part of the Pluralsight Java Development Bootcamp — Capstone 2
+
+## Class Diagram
+![Class Diagram](class-diagram.png)
