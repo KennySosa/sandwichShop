@@ -360,8 +360,8 @@ public class UserInterface {
      *   4. Saves the receipt file via ReceiptWriter.
      */
     private void checkout() {
-        if (currentOrder.isEmpty()) {
-            System.out.println("\n  ⚠  Your order is empty! Add at least one item first.");
+        if (!currentOrder.isValid()) {
+            System.out.println("\n  ⚠  Please add at least one sandwich, drink, or chips before checking out.");
             return;
         }
 
