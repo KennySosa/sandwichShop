@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
+//------asked chat for code review input said this class is "GOD CLASS", after capstone comeback and cut this or put in
+//other classes to slim down the code,USE MORE INHEREITANCE PLS
 /*
  * UserInterface handles all console input/output for program.
  *
- * DESIGN PRINCIPLES:
  * this class only handles I/O and delegates all
- * business logic (pricing, validation, receipt writing) to the model layer.
- * shared input helpers (promptInt, promptYesNo, displayMenu) are
+ * business logic to the model layer.
+ * shared input helpers, promptInt, promptYesNo, displayMenu are
  * extracted into private methods so no screen-interaction code is duped.
  * every menu option is compared to a named constant or
  * clearly labeled inline so the code is self-documenting.
@@ -386,7 +386,7 @@ public class UserInterface {
     }
     //  CANCEL
     /*
-     * Asks the user to confirm before discarding the current order.
+     * asks the user to confirm before discarding the current order.
      * Prevents accidental cancellation if the order already has items.
      *
      * @return true if the user confirms the cancellation
@@ -398,14 +398,9 @@ public class UserInterface {
         return promptYesNo("  Are you sure you want to cancel? (y/n): ");
     }
     //  SHARED INPUT HELPERS
-    /*
-     * Prompts the user for an integer within [min, max] (inclusive).
-     * Loops until valid input is received — never crashes on bad input
-     * @param prompt the message to display before waiting for input
-     * @param min    minimum acceptable value (inclusive)
-     * @param max    maximum acceptable value (inclusive)
-     * @return a validated integer in [min, max]
-     */
+     //prompts the user for an integer within [min, max]
+    //loops until valid input is received
+
     private int promptInt(String prompt, int min, int max) {
         while (true) {
             System.out.print(prompt);
@@ -421,8 +416,8 @@ public class UserInterface {
     }
 
     /*
-     * Prompts the user for a yes/no answer.
-     * Accepts 'y', 'Y', 'n', 'N' — loops on anything else.
+     * prompts the user for a yes/no answer.
+     * accepts 'y', 'Y', 'n', 'N' — loops on anything else.
      *
      * @param prompt the question to display
      * @return true for 'y'/'Y', false for 'n'/'N'

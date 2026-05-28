@@ -9,19 +9,19 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * SignatureSandwichFactory creates the predefined signature sandwiches.
+ * SignatureSandwichFactory creates the predefined signature sandwiches
  *
  * factory:
- *   The factory pattern separates construction logic from the SignatureSandwich
- *   class itself.  If a new signature sandwich is added or prices change, only
- *   this class needs to be edited — SignatureSandwich, Order, and UI are untouched.
+ *The factory pattern separates construction logic from the SignatureSandwich
+ *class itself.  If a new signature sandwich is added or prices change, only
+ *this class needs to be edited — SignatureSandwich, Order, and UI are untouched.
  * using static factory methods cuz:
- *   Each method returns a fresh SignatureSandwich instance so that every call
- *   gets its own independent object.  The customer can then customize (add/remove
- *   toppings) without affecting future orders of the same signature.
+ *Each method returns a fresh SignatureSandwich instance so that every call
+ *gets its own independent object. The customer can then customize (add/remove
+ *toppings) without affecting future orders of the same signature
  * generics:
- *   getAllSignatures() returns List<SignatureSandwich> (not List<Sandwich>),
- *   so the UI can display the signatureName without casting.
+ *getAllSignatures() returns List<SignatureSandwich> (not List<Sandwich>),
+ *so the UI can display the signatureName without castin
  */
 public class SignatureSandwichFactory {
 
@@ -66,9 +66,8 @@ public class SignatureSandwichFactory {
     /*
      * Returns all available signature sandwiches as a list.
      *
-     * using Arrays.asList is intentional —
-     * the catalogue is fixed at runtime.  If the list needed to grow
-     * dynamically, we would use new ArrayList<>(Arrays.asList(...)).
+     * using Arrays.asList is here cuz the catalogue is fixed at runtime
+     * If the list needed to grow i can just use new ArrayList<>(Arrays.asList(...)).
      */
     public static List<SignatureSandwich> getAllSignatures() {
         return Arrays.asList(

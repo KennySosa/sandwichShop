@@ -7,11 +7,11 @@ import com.pularsight.ENUMS.ToppingType;
  * Topping represents a single topping placed on a sandwich.
  *
  * It pairs a ToppingType (what the topping IS) with an isExtra flag
- * (whether the customer requested a double portion of a premium topping).
+ * (whether the customer requested a double portion of a premium topping)
  *
  * IMMUTABILITY
- *   Fields are final after construction so if a user wants to change "extra"
- *   they remove the topping and re-add it
+ *fields are final after construction so if a user wants to change extras
+ *they remove the topping and re-add it
  */
 public class Topping {
 
@@ -34,7 +34,7 @@ public class Topping {
     public boolean     isExtra()    { return isExtra; }
 
     /*
-     * Calculates the cost of this topping for the given sandwich size.
+     * Calculates the cost of this topping for the given sandwich size
      *
      * price logic lives here (not in Sandwich) so that adding a new
      * topping category only requires updating this method and ToppingCategory not Sandwich.getPrice().
@@ -60,7 +60,7 @@ public class Topping {
                 return 0.0;   // free toppings — no charge
         }
     }
-    //Returns a formatted summary for use on the receipt.
+    //Returns a formatted summary for use on the receipt
 
     public String getReceiptLine() {
         String extra = isExtra ? " (extra)" : "";

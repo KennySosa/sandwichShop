@@ -5,11 +5,8 @@ package com.pularsight.ENUMS;
  * every price tier that depends on size.
  *
  * i embed prices in enum cuz
- *   The spec defines exactly three sizes with fixed pricing tables.
- *   By attaching every price to its size constant we get a single source of
- *   truth: changing the 8" meat price means editing ONE line here, nowhere else.
- *   A separate PricingService or static map would spread this knowledge out and
- *   create extra coupling. its for the most part fixed values
+ * the spec define exactly three sizes with fixed pricing tables
+ * create extra coupling. its for the most part fixed values
  */
 public enum SandwichSize {
 
@@ -17,7 +14,7 @@ public enum SandwichSize {
     EIGHT_INCH ("8\"",  7.00, 2.00, 1.00, 1.50, 0.60),
     TWELVE_INCH("12\"", 8.50, 3.00, 1.50, 2.25, 0.90);
 
-    // ── Fields ────────────────────────────────────────────────────────────────
+    //---- Fields --------------------------------------------------------------------------------
     private final String displayName;
     private final double basePrice;
     private final double meatPrice;
@@ -25,7 +22,7 @@ public enum SandwichSize {
     private final double cheesePrice;
     private final double extraCheesePrice;
 
-    // ── Constructor ───────────────────────────────────────────────────────────
+    //---- Constructor ----------------------------------------------------------------------
     SandwichSize(String displayName,
                  double basePrice,
                  double meatPrice,
@@ -40,7 +37,7 @@ public enum SandwichSize {
         this.extraCheesePrice = extraCheesePrice;
     }
 
-    // ── Accessors ─────────────────────────────────────────────────────────────
+    //---- Accessors ---------------------------------------------------------------------
     public String getDisplayName()      { return displayName;      }
     public double getBasePrice()        { return basePrice;        }
     public double getMeatPrice()        { return meatPrice;        }

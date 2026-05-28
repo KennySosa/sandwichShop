@@ -5,17 +5,17 @@ import com.pularsight.ENUMS.SandwichSize;
 import com.pularsight.Models.Sandwich;
 
 /*
- * SignatureSandwich represents a pre-configured "house" sandwich.
+ * SignatureSandwich represents a pre-configured "house" sandwich
  *
  * inheritance and polymorph
- *   The only things it adds are:
- *- A signatureName field shown on the receipt
- *- An overridden getReceiptLine() that prepends the signature label
- *- An overridden copy() that returns a SignatureSandwich
+ *The only things it adds are:
+ *-signatureName field shown on the receipt
+ *-overridden getReceiptLine() that prepends the signature label
+ *-overridden copy() that returns a SignatureSandwich
  *
- *   SignatureSandwichFactory (in util) builds the predefined BLT and Philly Cheese
- *   Steak objects.  Keeping construction logic in a factory means this class stays
- *   focused on behavior, not configuration.
+ *signatureSandwichFactory (in util) builds the predefined BLT and Philly Cheese
+ *steak objects.  Keeping construction logic in a factory means this class stays
+ *focused on behavior, not configuration
  */
 public class SignatureSandwich extends Sandwich {
 
@@ -23,7 +23,7 @@ public class SignatureSandwich extends Sandwich {
 
     /*
      * Constructs a signature sandwich by delegating base-sandwich setup to
-     * the parent constructor and then storing the signature name.
+     * the parent constructor and then storing the signature name
      *
      * @param signatureName the marketing name (e.g. "BLT")
      * @param size          inherited from Sandwich

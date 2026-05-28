@@ -11,7 +11,7 @@ package com.pularsight.ENUMS;
  */
 public enum ToppingType {
 
-    // ── Premium: Meats ────────────────────────────────────────────────────────
+    //---- Premium: Meats -------------------------------------------------------------
     STEAK      ("Steak",       ToppingCategory.MEAT),
     HAM        ("Ham",         ToppingCategory.MEAT),
     SALAMI     ("Salami",      ToppingCategory.MEAT),
@@ -19,13 +19,13 @@ public enum ToppingType {
     CHICKEN    ("Chicken",     ToppingCategory.MEAT),
     BACON      ("Bacon",       ToppingCategory.MEAT),
 
-    // ── Premium: Cheeses ──────────────────────────────────────────────────────
+    //---- Premium: Cheeses --------------------------------------------------------
     AMERICAN   ("American",    ToppingCategory.CHEESE),
     PROVOLONE  ("Provolone",   ToppingCategory.CHEESE),
     CHEDDAR    ("Cheddar",     ToppingCategory.CHEESE),
     SWISS      ("Swiss",       ToppingCategory.CHEESE),
 
-    // ── Regular: Vegetables (always free) ────────────────────────────────────
+    //---- Regular: Vegetables free ------------------------------------------------
     LETTUCE    ("Lettuce",     ToppingCategory.REGULAR),
     PEPPERS    ("Peppers",     ToppingCategory.REGULAR),
     ONIONS     ("Onions",      ToppingCategory.REGULAR),
@@ -36,7 +36,7 @@ public enum ToppingType {
     GUACAMOLE  ("Guacamole",   ToppingCategory.REGULAR),
     MUSHROOMS  ("Mushrooms",   ToppingCategory.REGULAR),
 
-    // ── Regular: Sauces (always free) ────────────────────────────────────────
+    //---- Regular: Sauces free -----------------------------------------------------
     MAYO           ("Mayo",            ToppingCategory.SAUCE),
     MUSTARD        ("Mustard",         ToppingCategory.SAUCE),
     KETCHUP        ("Ketchup",         ToppingCategory.SAUCE),
@@ -44,17 +44,17 @@ public enum ToppingType {
     THOUSAND_ISLAND("Thousand Island", ToppingCategory.SAUCE),
     VINAIGRETTE    ("Vinaigrette",     ToppingCategory.SAUCE);
 
-    // ── Fields ────────────────────────────────────────────────────────────────
+    //---- Fields ---------------------------------------------------------------------
     private final String          displayName;
     private final ToppingCategory category;
 
-    // ── Constructor ───────────────────────────────────────────────────────────
+    //---- Constructor ---------------------------------------------------------------
     ToppingType(String displayName, ToppingCategory category) {
         this.displayName = displayName;
         this.category    = category;
     }
 
-    // ── Accessors ─────────────────────────────────────────────────────────────
+    //---- Accessors ------------------------------------------------------------------
     public String          getDisplayName() { return displayName; }
     public ToppingCategory getCategory()    { return category;    }
 

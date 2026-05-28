@@ -13,15 +13,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
- * Order aggregates all items a customer wants to purchase.
+ * order aggregates all items a customer wants to purchase.
  *
  *generics------------
- *   The internal list is typed as ListOrderable a list of any Orderable,
- *   regardless of the concrete type parameter. this lets it store sandwich,
- *   drink, and chips in the same list without casting or duplicating add/remove
- *   methods.  The wildcard <?> is correct here because we only read from the
- *   list polymorphically (via getPrice / getReceiptLine); we never write back
- *   a typed element retrieved from it.
+ *   the internal list is typed as ListOrderable a list of any orderable
+ *   regardless of the concrete type parameter this lets it store sandwich
+ *   drink and chips in the same list without casting or duping add/remove
+ *   methods. wildcard <?> is here because we only read from the
+ *   list polymorphically ( getPrice / getReceiptLine);
  *
  *streams--------------
  *   getTotal() uses a single stream pipeline to sum every item's price.

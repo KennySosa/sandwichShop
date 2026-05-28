@@ -19,7 +19,7 @@ public class Sandwich implements Orderable<Sandwich> {
     private       boolean      isToasted;
 
 
-     //Toppings are stored in a single list of Topping objects.
+     //Toppings are stored in a single list of Topping objects
 
     private final List<Topping> toppings;
 
@@ -32,9 +32,9 @@ public class Sandwich implements Orderable<Sandwich> {
     }
 
     /*
-     *copy constructor – used by copy() and SignatureSandwich.
+     *copy constructor – used by copy() and SignatureSandwich
      * creates  copy a new topping list with the same Topping objects
-     * gtopping is immutable, so shallow copies of each element are safe).
+     * gtopping is immutable, so shallow copies of each element are safe)
      */
     protected Sandwich(Sandwich source) {
         this.size      = source.size;
@@ -50,7 +50,7 @@ public class Sandwich implements Orderable<Sandwich> {
         toppings.add(topping);
     }
 
-    // Removes a topping by type (removes first match). Returns true if found.
+    // Removes a topping by type (removes first match). Returns true if found
     public boolean removeTopping(ToppingType type) {
         return toppings.removeIf(t -> t.getType() == type);
     }
@@ -61,10 +61,10 @@ public class Sandwich implements Orderable<Sandwich> {
     }
 
     /*
-     * Returns only the toppings matching a given category.
+     * Returns only the toppings matching a given category
      *
-     * STREAMS- filter() + collect() replaces a manual for-loop + addToList pattern.
-     * This is cleaner and easier to read for a single-predicate filter.
+     * STREAMS- filter() + collect() replaces a manual for-loop + addToList pattern
+     * This is cleaner and easier to read for a single-predicate filter
      */
     public List<Topping> getToppingsByCategory(ToppingCategory category) {
         return toppings.stream()
@@ -75,7 +75,7 @@ public class Sandwich implements Orderable<Sandwich> {
     // Pricing ------------------------------------------------------------------
 
     /*
-     * Calculates the total price of this sandwich.
+     * Calculates the total price of this sandwich
      *
      * STREAMS- mapToDouble(t -> t.getPrice(size)) converts each Topping to its
      * dollar cost for our size, then .sum() aggregates — one concise pipeline

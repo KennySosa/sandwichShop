@@ -10,8 +10,7 @@ import java.time.format.DateTimeFormatter;
  * ReceiptWriter handles all file I/O for saving order receipts.
  *
  * FILE
- *   Receipts are saved to the "receipts/" folder relative to the working
- *   directory
+ *   Receipts are saved to the "receipts/" folder in my pc
  */
 public class ReceiptWriter {
 
@@ -28,11 +27,11 @@ public class ReceiptWriter {
     /*
      * Saves the receipt for the given order to disk.
      * STEPS:
-     *  1. Ensure the receipts/ directory exists (creates it if not).
-     *  2. Build the filename from the order's timestamp.
-     *  3. Write the receipt text produced by Order.getReceiptText().
+     * 1. Ensure the receipts/ directory exists (creates it if not).
+     * 2. Build the filename from the order's timestamp.
+     * 3. Write the receipt text produced by Order.getReceiptText().
      *
-     *PrintWriter>BufferedWriter?
+     *PrintWriter>BufferedWriter
      *   PrintWriter.println() handles platform line endings automatically,
      *   and it wraps FileWriter cleanly with try-with-resources.
      * @param order the completed order to save
@@ -40,17 +39,17 @@ public class ReceiptWriter {
      * @throws IOException if the file cannot be created or written
      */
     public static String saveReceipt(Order order) throws IOException {
-        // ── Step 1: Ensure the receipts folder exists ──────────────────────────
+        //----Step 1: Ensure the receipts folder exists -----------------------------------
         File folder = new File(RECEIPTS_FOLDER);
         if (!folder.exists()) {
             folder.mkdirs();  // mkdirs() also creates any missing parent directories
         }
 
-        // ── Step 2: Build the timestamped filename ─────────────────────────────
+        //----Step 2: Build the timestamped filename ------------------------------------
         String fileName = order.getOrderTime().format(FILE_NAME_FORMATTER) + ".txt";
         File   file     = new File(folder, fileName);
 
-        // ── Step 3: Write the receipt text ─────────────────────────────────────
+        //----Step 3: Write the receipt text ------------------------------------------
         // try-with-resources guarantees the writer is closed even if an exception occurs
         try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
             writer.println(order.getReceiptText());

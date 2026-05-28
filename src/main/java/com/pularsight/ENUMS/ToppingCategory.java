@@ -4,10 +4,8 @@ package com.pularsight.ENUMS;
  * ToppingCategory classifies toppings by their pricing tier.
  *
  * separated from toppingType cuz
- *   ToppingType is the which topping
- *   ToppingCategory is the pricing rule
- *   Adding a new category in the future only requires
- *   changing this enum and the pricing method
+ *toppingType is the which topping, toppingCategory is the pricing rule
+ *adding a new category in the future only requires changing this enum and the pricing method
  */
 public enum ToppingCategory {
     MEAT    ("Meat",    true),
