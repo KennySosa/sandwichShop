@@ -123,7 +123,7 @@ Sample Receipt
 ## Interesting Code
 
 One of my favorite parts of this project is how the topping menu is built dynamically
-using Java Streams in `addToppingsByCategory()` inside `UserInterface.java`. Instead of
+using Streams in `addToppingsByCategory()` inside `UserInterface.java`. Instead of
 hardcoding a separate list for meats, cheeses, and regular toppings, I filter the
 `ToppingType` enum at runtime by category. This means if I ever add a new topping to
 the enum, it automatically appears in the menu with no UI changes needed.
